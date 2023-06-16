@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="taskmngr.css">
+  <title>Task Manager</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Task Manager</h1>
+    <div class="add-task-form">
+      <h2>Add Task</h2>
+      <form id="task-form">
+        <input type="text" id="activity" placeholder="Activity" required>
+        <input type="date" id="start-date" required>
+        <input type="date" id="end-date" required>
+        <select id="status">
+          <option value="Not Started">Not Started</option>
+          <option value="In-Progress">In-Progress</option>
+          <option value="Completed">Completed</option>
+          <option value="Due-Passed">Due-Passed</option>
+        </select>
+        <button type="submit">Add</button>
+      </form>
+    </div>
+
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="Search tasks">
+    </div>
+
+    <table id="task-table">
+      <thead>
+        <tr>
+          <th>Activity</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="task-table-body"></tbody>
+    </table>
+  </div>
+
+  <div id="edit-modal" class="modal">
+    <div class="modal-content">
+      <h2>Edit Task</h2>
+      <form id="edit-form">
+        <input type="hidden" id="edit-task-id">
+        <input type="text" id="edit-activity" placeholder="Activity" required>
+        <input type="date" id="edit-start-date" required>
+        <input type="date" id="edit-end-date" required>
+        <select id="edit-status">
+          <option value="Started">Not Started</option>
+          <option value="Not Started">Not Started</option>
+          <option value="In-Progress">In-Progress</option>
+          <option value="Completed">Completed</option>
+          <option value="Due-Passed">Due-Passed</option>
+        </select>
+        <button type="submit">Save</button>
+        <button id="edit-cancel" type="button">Cancel</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="delete-modal" class="modal">
+    <div class="modal-content">
+      <h2>Delete Task</h2>
+      <p>Are you sure you want to delete this task?</p>
+      <button id="delete-confirm" type="button">Delete</button>
+      <button id="delete-cancel" type="button">Cancel</button>
+    </div>
+  </div>
+
+  <script src="taskmngr.js"></script>
+</body>
+
+</html>
